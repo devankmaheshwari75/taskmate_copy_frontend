@@ -1,0 +1,81 @@
+// .navbar{
+//     display: flex;
+//     align-items: center;
+//     padding: 0 16px;
+//     background-color: black;
+// }
+
+// .navbar-brand{
+//     font-size: 20px;
+//     font-weight: 600;
+//     margin-right: 16px;
+// }
+// .spacer{
+//     flex: 1;
+// }
+
+// button{
+//     color: white;
+//     text-transform: uppercase;
+//     margin-left: 8px;
+// }
+// button.active{
+//     font-weight: 600;
+// }
+// .custom-toolbar{
+//     background-color: #ff0000;
+// }
+
+// 
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    background-color: #874CCC; /* Updated to a Material Design primary color */
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  button {
+    color: white;
+    text-transform: uppercase;
+    margin-left: 8px;
+  }
+  
+  button.active {
+    font-weight: 600;
+  }
+  
+  .home-content {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .home-content h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .home-content p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .hero-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  

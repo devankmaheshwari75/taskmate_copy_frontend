@@ -1,0 +1,36 @@
+<div *ngIf="!isAdminLoggedIn && !isEmployeeLoggedIn">
+  <mat-toolbar color="primary" class="navbar">
+    <span class="navbar-brand">TaskMate</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/signup" routerLinkActive="active">Register</button>
+    <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
+  </mat-toolbar>
+  <div class="home-content">
+    <h1>Welcome to TaskMate</h1>
+    <p>Your ultimate solution for managing tasks efficiently and collaboratively.</p>
+    <!-- <img src="assets/task_management.svg" alt="Task Management Illustration" class="hero-image"> -->
+  </div>
+</div>
+
+<div *ngIf="isAdminLoggedIn">
+  <mat-toolbar color="primary" class="navbar">
+    <span class="navbar-brand">TaskMate - Admin</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</button>
+    <button mat-button routerLink="/admin/task" routerLinkActive="active">Post Task</button>
+    <button mat-button routerLink="/admin/users" routerLinkActive="active">Edit Users</button>
+
+    <button mat-button (click)="logout()" routerLinkActive="active">Logout</button>
+  </mat-toolbar>
+</div>
+
+<div *ngIf="isEmployeeLoggedIn">
+  <mat-toolbar color="primary" class="navbar">
+    <span class="navbar-brand">TaskMate - Employee</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/employee/dashboard" routerLinkActive="active">Dashboard</button>
+    <button mat-button (click)="logout()" routerLinkActive="active">Logout</button>
+  </mat-toolbar>
+</div>
+
+<router-outlet></router-outlet>

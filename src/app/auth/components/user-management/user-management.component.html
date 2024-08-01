@@ -1,0 +1,50 @@
+<div class="user-management">
+    <h2>User Management</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.userRole}}</td>
+          <td>
+            <button (click)="editUser(user)">Edit</button>
+            <button (click)="deleteUser(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="selectedUser">
+      <h3>Edit User</h3>
+      <form (ngSubmit)="saveUser()">
+        <label>
+          Name:
+          <input [(ngModel)]="selectedUser.name" name="name" required>
+        </label>
+        <label>
+          Email:
+          <input [(ngModel)]="selectedUser.email" name="email" required>
+        </label>
+        <label>
+          Role:
+          <select [(ngModel)]="selectedUser.userRole" name="userRole" required>
+            <option value="ADMIN">ADMIN</option>
+            <option value="EMPLOYEE">EMPLOYEE</option>
+          </select>
+        </label>
+        <button type="submit">Save</button>
+        <button type="button" (click)="cancelEdit()">Cancel</button>
+      </form>
+    </div>
+  </div>
+  
